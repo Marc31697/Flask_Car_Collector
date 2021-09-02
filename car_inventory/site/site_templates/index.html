@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'user-created'%}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class="close" data-dismiss = "alert">&times;</button>
+                    </div>
+
+                {% elif cat == 'auth-success' %}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class="close" data-dismiss = "alert">&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div>
+    <!-- Header Section -->
+    <header style="background-image: url(../../static/images/space.jpg);">
+        <div class="header-text">
+            <h2>Show us your collection is out of this world!</h2>
+            <h5>Create an amazing portfolio showing off your rides!</h5>
+            <div>
+                <button class="btn btn-primary">Check Out Collections</button>
+                <button class="btn btn-primary">Join Our Discord</button>
+            </div>
+        </div>
+
+    </header>
+</div>
+
+<!-- Collection of Features -->
+<section class="row" id="features-section">
+    <div class="col-12 col-md-4">
+        <img id="Feat-pics" src="../../static/images/audis7.jpg.opdownload" alt="Audi Image">
+        <h4>Communicate with other collectors</h4>
+        <p>If you want to have deep conversations about your favorite collector's items, this is for you!</p>
+    </div>
+
+    <div class="col-12 col-md-4">
+        <img id="Feat-pics" src="../../static/images/Classic-cars.png" alt="Vintage-image">
+        <h4>Style your own collections</h4>
+        <p>Choose how YOU want to show off your stuff!</p>
+    </div>
+
+    <div class="col-12 col-md-4">
+        <img id="Feat-pics" src="../../static/images/purpVintage.jpg" alt="Vintage 2 image">
+        <h4>Get the latest news</h4>
+        <p>See what else is going on in the car collection world you live in!</p>
+    </div>
+</section>
+<!-- End of Collection of Features -->
+
+<!-- Get Started Section -->
+<section class="row" style="color: white; padding: 25px; justify-content: center;">
+    <div class="col-12 col-md-6" style="text-align: center;">
+        <img class="takeoff-bg" src="../../static/images/takeoff.jpg" alt="takeoff">
+        <h4>It's time to get started🐱‍🏍</h4>
+        <p>
+            Are you ready to get the jump on your future in car collecting? Join our
+            discord channel and give a star on the Github project!
+        </p>
+        <div>
+            <button class="btn btn-primary">View On Github</button>
+            <button class="btn btn-primary">Join Our Discord Channel!</button>
+        </div>
+    </div>
+</section>
+<!-- End of Get Started Section -->
+
+<!-- Start of Footer -->
+<footer class="row" id="footer">
+    <!-- <div class="foot-bg">
+        <img src="../../static/images/nav_background.jpg" alt="Coding Drones Logo" id="footer-logo">
+    </div> -->
+
+    <div class="col-2 col-md-2">
+        <div class="footer-text-flex">
+            <h4>Info</h4>
+            <p>Careers</p>
+            <p>About Us</p>
+            <p>News</p>
+        </div>
+    </div>
+
+    <div class="col-2 col-md-2">
+        <div class="footer-text-flex">
+            <h4>Social Media</h4>
+            <p>Twitter</p>
+            <p>Facebook</p>
+            <p>Instagram</p>
+        </div>
+    </div>
+    
+    <div class="col-2 col-md-2">
+        <div class="footer-text-flex">
+            <h4>Help</h4>
+            <p>Contact Us</p>
+            <p>Feedback</p>
+            <p>FAQ</p>
+        </div>
+    </div>
+</footer>
+<!-- End of footer -->
+{% endblock content %}
